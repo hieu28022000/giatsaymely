@@ -1,0 +1,402 @@
+
+/* ===== RESET MẶC ĐỊNH ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'HeadingNow';
+    src: url('/static/fonts/heading_now/HeadingNowTrial-67ExtraboldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif
+}
+
+/* ===== CÁC PHẦN THỤT VÀO 10% ===== */
+.about-section,
+.gallery,
+.services,
+.testimonials {
+    padding: 50px 10%; /* Thụt vào 10% hai bên */
+    text-align: center;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+header {
+    padding: 25px 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header.solid {
+    background: #d3e0ea;
+}
+
+/* Logo */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #68b7f3;
+    font-size: 30px;
+    font-family: 'HeadingNow', sans-serif;
+    transition: color 0.3s ease-in-out;
+    text-shadow: -1px -1px 0 #000,  
+                  1px -1px 0 #000,  
+                 -1px  1px 0 #000,  
+                  1px  1px 0 #000;
+}
+
+.header-solid .logo a {
+    color: #000000;
+    text-shadow: none;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+/* Nút "Liên hệ" */
+.contact-btn {
+    border: 2px solid #000000;
+    background: rgba(49, 77, 106, 0.7);;
+    color: #ffffff;
+    padding: 8px 15px;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* ===== SLIDER ===== */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 45px;
+    text-align: center;
+}
+
+.caption .description {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 10%;
+    margin-top: 20px;
+    color: #f0f0f0;
+    max-width: 80%;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Dots điều hướng */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dots div {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dots .active {
+    width: 24px;
+    border-radius: 12px;
+    background: white;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #d3e0ea;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    padding: 25px 5%;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer h2 {
+    padding-bottom: 10px;
+}
+
+.branches {
+    text-align: left;
+    flex: 1;
+}
+
+.contact-info {
+    text-align: right;
+    flex: 1;
+}
+
+.notify {
+    color: red;
+}
+
+/* ===== GIỚI THIỆU DOANH NGHIỆP ===== */
+.about-section h2,
+.gallery h2,
+.services h2,
+.testimonials h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.notify-section {
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: red;
+    text-align: justify;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+/* ===== GALLERY - HÌNH ẢNH DOANH NGHIỆP ===== */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mỗi cột tối thiểu 250px */
+    gap: 15px;
+    justify-content: center;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Giới hạn tối đa 3 ảnh trên 1 hàng */
+@media (min-width: 768px) { /* Khi màn hình >= 768px */
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .gallery-container img{
+        grid-template-columns: repeat(3, 1fr);
+        height: 350;
+    }
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== DỊCH VỤ ===== */
+.services-container {
+    display: flex;
+    gap: 20px;
+    padding-top: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    width: 200px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon dịch vụ */
+.service .icon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service .icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.service h3 {
+    font-size: 20px;
+    margin: 40px 0 10px;
+    color: #222;
+}
+
+.service p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ===== CAM KẾT / TESTIMONIALS ===== */
+.testimonial-slider {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial {
+    display: none;
+    padding: 20px;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+.client-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* Nút điều hướng */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+/* Chấm điều hướng */
+.dots-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dots-container div {
+    width: 12px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dots-container .active {
+    width: 24px;
+    border-radius: 12px;
+    background: black;
+}
+
+/* Mặc định ẩn các phần tử */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Trượt xuống 30px khi ẩn */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Khi phần tử xuất hiện trên màn hình */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
