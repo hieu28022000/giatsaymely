@@ -51,12 +51,17 @@ header.solid {
 }
 
 /* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
 .logo a {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #68b7f3;
-    font-size: 30px;
+    font-size: 2.2vw;
     font-family: 'HeadingNow', sans-serif;
     transition: color 0.3s ease-in-out;
     text-shadow: -1px -1px 0 #000,  
